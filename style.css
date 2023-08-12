@@ -1,0 +1,260 @@
+/*General*/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "arial";
+	font-size: 16px;
+	max-width: 100%;
+	min-height: 100%;
+	background-color: #bcd6f3;
+}
+
+/*Reuseable*/
+
+.container {
+	max-width: 600px;
+	margin: 20px auto;
+	background-color: #ffffff;
+}
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+input {
+	cursor: pointer;
+}
+.section {
+	padding: 20px;
+}
+.section-header {
+	text-transform: capitalize;
+}
+.section-header button {
+	border: none;
+	color: #ff6733;
+	font-weight: 600;
+	cursor: pointer;
+	user-select: none;
+}
+.divider {
+	margin: 4px 0;
+	border-top: 1px solid #dddddd;
+}
+
+/*Display section*/
+
+.color-display {
+	width: 100%;
+	height: 150px;
+	background-color: #dddddd;
+}
+
+/*Color code section*/
+
+.copy-save {
+	width: 80px;
+}
+.select-copy-mode {
+	padding: 10px 0;
+}
+.mode-input-group label{
+	font-size: 14px;
+	font-weight: 500;
+}
+.mode-input-group:first-child {
+	margin-right: 10px;
+}
+.color-input-group label {
+	display: block;
+	font-weight: 600;
+}
+.color-input-group input {
+	background: #ffffff;
+	color: #000000;
+	font-size: 15px;
+    padding: 3px 5px;
+    margin-top: 5px;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+}
+.color-input-group input:focus {
+	border-color: #ff6733;
+	outline: none;
+}
+.hex-color-input {
+	position: relative;
+}
+.input-hex {
+	padding-left: 22px !important;
+}
+.hex-icon {
+	background-color: #c9c9c9;
+	padding: 2px 5px;
+	border: 1px solid #c9c9c9;
+	border-radius: 5px 0 0 5px;
+	font-size: 15px;
+	position: absolute;
+	left: 1px;
+	bottom: 1px;
+}
+.input-group {
+	display: flex;
+	gap: 5px;
+	position: relative;
+}
+.adjust-Rgb-group .title {
+	margin: 20px 0;
+	font-weight: 600;
+}
+label {
+	user-select: none;
+}
+
+/*preset & custom color*/
+
+.preset-color-container,
+.custom-color-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: flex-start;
+	padding: 10px 0;
+}
+.preset-color {
+	width: 85px;
+	height: 35px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+.preset-color:hover {
+	opacity: 0.9;
+	box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*backgroud preference*/
+.background-preference {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 15px;
+}
+.background-preference p {
+	font-weight: 600;
+	margin: 4px 0;
+}
+.bg-preview {
+	width: 100%;
+	height: 150px;
+	background-color: #bcd6f3;
+	margin: 5px 0;
+}
+.bg-control {
+	margin: 5px 0;
+}
+.bg-file-input {
+	display: none;
+}
+.bg-control-btn {
+	padding: 4px 8px;
+	margin: 3px 0;
+	background-color: #e1e1e1;
+	border: 0;
+	border-radius: 3px;
+}
+#bg-remove-btn {
+	display: none;
+}
+.bg-customization {
+	display: none;
+}
+.bg-control-option {
+	margin: 16px;	
+}
+.bg-control-option .lead {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 6px;
+}
+.bg-control-option select{
+	display: block;	
+	width: 100%;
+	border-color: #dddddd;
+	padding: 4px;
+}
+
+/*toast message*/
+
+.toast-message {
+	padding: 10px 20px;
+	font-size: 18px;
+	border-radius: 5px;
+	text-align: center;
+	background-color:#22c7b8;
+	color: #ffffff;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.toast-animation-slide-in{
+	animation: toast-animation-in 0.5s ease-in;
+}
+.toast-animation-slide-out{
+	animation: toast-animation-out 0.5s ease-in;
+}
+
+@keyframes toast-animation-in {
+	from {
+		transform: translateX(200px);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+@keyframes toast-animation-out {
+	from {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+	to{
+		transform: translateX(200px);
+		opacity: 0;
+	}
+}
+
+/*---MEDIA---*/
+
+@media only screen and (max-width: 480px) {
+	.color-input-group,
+	.rgb-slider-group {
+		display: block;
+	}
+	.color-input-group div, 
+	.rgb-slider-group div {
+		max-width: 70%;
+		margin: auto;
+	}
+	.adjust-Rgb-group .title {
+		max-width: 70%;
+		margin: 20px auto;
+	}
+	.preset-color-container, 
+	.custom-color-container {
+		display: grid;
+		grid-template-columns: 24% 24% 24% 24%;
+		gap: 5px;
+	}
+	.preset-color {
+		width: inherit;
+	}
+}
